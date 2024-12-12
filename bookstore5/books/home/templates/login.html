@@ -1,0 +1,177 @@
+
+
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:  "Poppins", sans-serif;
+    background-color: #e2e2e2;
+ }
+form {
+  width: 300px;
+  margin: 0 auto;
+
+}
+    .container1{
+    max-width: 1300px;
+    margin: auto;
+   padding-left: 25px;
+   padding-right: 25px;
+   margin-top: 30px;
+}
+/* ...........box code ......... */
+
+.container2 {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.login-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-box form input[type="text"],
+.login-box form input[type="password"],
+.login-box form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.login-box form button {
+  background-color: #8f00ee;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.login-box form button:hover {
+  background-color: #60029e;
+}
+
+/................ navbar code ............./
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+nav {
+    flex: 1;
+    text-align: right;
+  }
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+  }
+nav ul li {
+    display: inline-block;
+    margin: 20px;
+  }
+a {
+    text-decoration: none;
+    color: #000;
+  }
+p {
+    color: #000;
+  }
+  </style>
+</head>
+<body>
+
+<!------------------ Header ------------------>
+<div class="header">
+  <div class="container1">
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="/static/images/brige1.png" alt="BookBridge-Logo"/>
+        </a>
+      </div>
+      <!----------  Nav Bar ------------------>
+      <nav>
+        <ul id="MenuItems">
+          <li><a href="/">Home</a></li>
+          <li><a href="search/">Search</a></li>
+          <li class="active"><a href="login/">Login</a></li>
+          <li><a href="signup/">Signup</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="container2">
+  <div class="login-box">
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href= 'signup/'><u>Sign up here</u></a></p>  <br>
+    </form>
+<!--    {% if error %}-->
+<!--    <p>{{ error }}</p>-->
+<!--    {% endif %}-->
+     {% if messages %}
+
+            {% for message in messages %}
+                <p {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</p>
+            {% endfor %}
+
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  // validation.js
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('form');
+  const username = form.querySelector('input[name="username"]');
+  const password = form.querySelector('input[name="password"]');
+
+  form.addEventListener('submit', function (event) {
+    let errors = [];
+
+    if (username.value.trim() === '') {
+      errors.push('Username is required');
+    }
+
+    if (password.value.trim() === '') {
+      errors.push('Password is required');
+    }
+
+    if (errors.length > 0) {
+      event.preventDefault();
+      alert(errors.join('\n'));
+    }
+  });
+});
+
+   </script>
+  </body>
+</html>

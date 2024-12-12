@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Books Lover | Book Bridge</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:  "Poppins", sans-serif;
+    background-color: #e2e2e2;
+}
+/*................ navbar code .............*/
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+nav {
+    flex: 1;
+    text-align: right;
+  }
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+  }
+nav ul li {
+    display: inline-block;
+    margin: 20px;
+  }
+a {
+    text-decoration: none;
+    color: #000;
+  }
+p {
+    color: #000;
+  }
+
+
+.container{
+    /* position: relative; */
+    max-width: 1300px;
+    margin: auto;
+   padding-left: 25px;
+   padding-right: 25px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  /* ............."Explore now" button code ........... */
+  .btn {
+  display: inline-block;
+  background: #6247aa;
+  color: #fff;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+ .header {
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+.header .row {
+margin-top: 0px;
+}
+.btn:hover {
+background: #000;
+}
+
+/* ---------------footer---------------- */
+.footer {
+  background: #000;
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 60px 0 20px;
+  margin-top: 5%;
+}
+.footer p {
+  color: #8a8a8a;
+}
+.footer h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.footer-col-1,
+.footer-col-2,
+.footer-col-3,
+.footer-col-4 {
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+.footer-col-1 {
+  flex-basis: 30%;
+}
+.footer-col-2 {
+  flex: 1;
+  text-align: center;
+}
+.footer-col-2 img {
+  width: 180px;
+  margin-bottom: 20px;
+}
+.footer-col-3,
+.footer-col-4 {
+  flex-basis: 12%;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+}
+.app-logo {
+  margin-top: 20px;
+}
+.app-logo img {
+  width: 140px;
+}
+.footer hr {
+  border: none;
+  background: #b5b5b5;
+  height: 1px;
+  margin: 20px 0;
+}
+.copyright {
+  text-align: center;
+}
+.menu-icon {
+  width: 28px;
+  margin-left: 30px;
+  margin-top: 15px;
+  display: none;
+}
+
+/* Basic styles for the book card */
+  .book-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+        .book-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        /* Styles for hover effects */
+        .book-card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Book cover image */
+        .book-card img {
+            border-radius: 8px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Buy Now button */
+        .buy-now {
+            background-color: #8f00ee;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Change color on hover */
+        .buy-now:hover {
+            background-color: #8f00ee;
+        }
+
+
+select {
+  border: 1px solid #c9d6ff;
+  border-radius: 3px;
+  padding: 5px;
+}
+select:focus {
+  outline: none;
+}
+.page-btn {
+  margin: 0 auto 80px;
+}
+.page-btn span {
+  display: inline-block;
+  border: 1px solid #c9d6ff;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.page-btn span:hover {
+  background: #c9d6ff;
+  color: #fff;
+}
+
+/* ----------------media query for menu---------------- */
+@media only screen and (max-width: 800px) {
+  nav ul {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  nav ul li a {
+    color: white;
+  }
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <!------------------ Header ------------------>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="index.html">
+              <img src="/static/images/brige1.png" alt="BookBridge-Logo"
+            /></a>
+          </div>
+          <!----------  Nav Bar ------------------>
+          <nav>
+            <ul id="MenuItems">
+              <li><a href="/">Home</a></li>
+              <li><a href="search/">Search</a></li>
+              <li><a href="login/">Login</a></li>
+              <li><a href="signup/">Signup</a></li>
+              <li><a href="logout/">Logout</a></li>
+            </ul>
+          </nav>
+        </div>
+
+          <div class="text-block">
+            <h1>
+              Dear Book Reader's<br />
+              Here You Go!
+            </h1>
+            <p>
+              Book are like Fingerprints,always new and one of a kind.<br />
+              It's our job to bring those prints to life and make them easy to access for the entire world.
+            </p>
+            <a href="search/" class="btn">Explore Now &#x27F6;</a>
+          </div>
+        </div>
+    </div>
+
+  <div class="book-container">
+
+    {% for book in book %}
+    <div class="book-card">
+            <img src="{{book.img.url}}" alt="Book Cover">
+
+        <h3>{{book.title}}</h3>
+        <p>{{book.author}}</p>
+        <button class="buy-now"><a href="">Read</a></button>
+
+    </div>
+       {% endfor %}
+
+</div>
+
+
+
+
+
+    <!-- ---------------------footer------------------- -->
+    <div class="footer">
+      <div class="container">
+
+        <p class="copyright">Copyright@2024 - BookBridge</p>
+      </div>
+    </div>
+
+    <!-- ---------Javascript for toggle menu------------- -->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+      MenuItems.style.maxHeight = "0px";
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+    <script>
+      $('.building-link').click(function(){
+      $('#book-title').html($(this).data('name'));
+      $('#book-desc').html($(this).data('desc'));
+      });
+    </script>
+  </body>
+</html>
